@@ -1,5 +1,7 @@
 # XLM Widget
 
+![widget](./xlm-widget.jpg)
+
 XLM Widget is a simple way to show the price of XLM in your website with just a couple of lines:
 
 ```html
