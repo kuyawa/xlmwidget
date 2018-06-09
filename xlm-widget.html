@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>XLM WIDGET</title>
+	<style>
+		body { width: 900px; margin: 0 auto; }
+		content { display: inline-block; width: 500px; height: 500px; }
+		aside   { display: inline-block; width: 300px; height: 500px; margin-left: 20px; padding: 20px; border-left: 1px solid #CCC; vertical-align: top; }
+		#links { margin: 20px 0; }
+	</style>
+</head>
+<body>
+	<content>
+		<h1>XLM Widget</h1>
+		<p>XLM Widget is a simple way to show the price of XLM in your website with just a couple of lines:</p>
+		<pre>
+&lt;div id="xlm-widget"&gt;&lt;/div&gt;
+&lt;script src="xlm-widget.js"&gt;&lt;/script&gt;
+		</pre>
+		<p>The DIV tag is just a placeholder to show the widget wherever you want it while the SCRIPT tag will load the code necessary to build it, fetching the latest price from your own server bridging chart data from Binance servers due to CORS restrictions.</p>
+		<p>In order to fetch data from Binance you have to create a simple xlm-fetch.php file with the following code:</p>
+		<pre>
+&lt;?php
+$url = 'https://api.binance.com/api/v1/klines';
+$url.= '?symbol=XLMUSDT&interval=30m&limit=48';
+echo file_get_contents($url);
+?&gt;
+		</pre>
+		<p>Once you have both files xlm-widget.js and xlm-fetch.php all you have to do is add the DIV tag wherever you want it on your webpage and that's it, a nice looking widget to amaze your visitors with the latest XLM price.</p>
+	</content>
+	<aside>
+		<div id="links">
+			<h2>Interesting links</h2>
+			<li><a href="https://stellar.org">Stellar.org</a></li>
+			<li><a href="https://reddit.com/r/stellar">Reddit/r/stellar</a></li>
+			<h2>Interesting stuff</h2>
+			<li><a href="https://wikipedia.org">Wikipedia</a></li>
+			<li><a href="https://example.com">Example.com</a></li>
+		</div>
+		<div id="xlm-widget">hello</div>
+	</aside>
+	<script src="xlm-widget.js"></script>
+</body>
+</html>
